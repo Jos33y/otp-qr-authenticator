@@ -8,8 +8,8 @@ body{
     padding: 0%;
     margin: 0%;
     font-family: 'Ubuntu', sans-serif;
-    color: #222;
-    background-color: #E8E6FA;
+    color: #E8E6FA;
+    background-color: #020126;
     }
 
    
@@ -56,29 +56,28 @@ body{
     margin-bottom: 5%;
     font-weight: 600;
     font-family: 'Nunito', sans-serif;
-    color:#3e3f42;
+   
 }
 .sub-col{
     font-size: 19px;
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
     text-transform: capitalize;
-    color:#5d5d60;
+   
 }
 .importance{
     margin-bottom: 10%;
 }
 .importance .col-text{
     font-size: 16px;
-    color: #6e6e72;
     margin-top: 10px;
     font-family: 'Noto Sans KR', sans-serif;
    
 }
 
 /** icon styles **/
-.importance .fas, .far{
-    color: #565ae2;
+.importance .fas{
+    color: #00FF5C;
     font-size: 50px;
     margin: 20px;
 }
@@ -90,17 +89,15 @@ body{
     margin-bottom: 5%;
     font-weight: 900;
     font-family: 'Nunito', sans-serif;
-    color:#3e3f42;
 }
 
 .col-text-2{
     font-size: 18px;
-    color: #6e6e72;
     margin-top: 30px;
     font-family: 'Noto Sans KR', sans-serif;
 }
-.col-text-2 .fas,  .far{
-    color: #565ae2;
+.col-text-2 .fas{
+    color: #00FF5C;
     font-size: 20px;
     margin: 10px;
 }
@@ -117,11 +114,28 @@ body{
     margin-top: 5%;
     height: 300px;
     background-color: #cccccc;
-    background-image: linear-gradient(#565ae2, #9595a0);
+    background-image: linear-gradient(#0a0e80, #9595a0);
     margin-bottom: 8%;
   }
 /* advantage styles */
-
+.advantage{
+    margin-top: 10%;
+    margin: 5%;
+}
+.ad-text{
+    font-size: 23px;
+    margin-top: 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+   
+}
+.ad-text .fas{
+    color: #00FF5C;
+    font-size: 100px;
+    margin: 10px;
+}
+.ad-row{
+    margin-top: 8%;
+}
 
 
   /* footer styles */
@@ -138,5 +152,5 @@ body{
   }
 
   hr.line{
-    border: 1px solid #565ae2;
+    border: 1px solid #00FF5C;
 }
