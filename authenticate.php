@@ -36,6 +36,10 @@ $phone=$_SESSION['phone'];
 
 echo "<script>alert('Valid OTP')</script>";
 
+
+
+
+
 }
 else{
     echo "<script>alert('Invalid OTP')</script>";
