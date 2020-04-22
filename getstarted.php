@@ -1,3 +1,9 @@
+
+<?php
+session_start();
+include('dbconn.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,14 +22,14 @@
 				<div></div>
 			</div>
 			<div class="tabs">
-				<form>
+                <form method="POST">
 					<div class="inputs">
 						<div class="input">
-							<input placeholder="Username" type="text">
+							<input placeholder="Username" name="username" type="text">
 							<img src="images/user.svg">
 						</div>
 						<div class="input">
-							<input placeholder="Password" type="password">
+							<input placeholder="Password" name="password" type="password">
 							<img src="images/pass.svg">
 						</div>
 						<label class="checkbox">
@@ -31,9 +37,9 @@
 							<span>Remember me</span>
 						</label>
 					</div>
-					<button>Login</button>
+					<button type="submit" name="login">Login</button>
 				</form>
-				<form>
+				<form method="POST" action="getstarted.php#login" >
 					<div class="inputs">
 						<div class="input">
 							<input placeholder="Username" type="text" name="username">
@@ -52,12 +58,121 @@
 							<img src="images/pass.svg">
 						</div>
 					</div>
-					<button>Register</button>
+					<button type="submit" name="register">Register</button>
 				</form>
 			</div>
 		</div>
 	</div>
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/index.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
+
+<?php 
+
+if(isset($_POST['login']))
+{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "select * from registered_users where username ='$username' and password = '$password'";
+
+    $query = mysqli_query($con, $sql) or  die(mysqli_error($con));
+
+    $check_user = mysqli_num_rows($query);
+
+ 
+      
+if($check_user == 0)
+{
+
+    echo '
+    <script>
+        swal({
+                title: "Email or Password is Wrong!",
+                icon: "error",
+             });
+</script>
+';
+
+    exit();
+
+}
+else
+    {
+
+        $_SESSION['username'] = $username;
+
+        $get_user = "select * from registered_users where username ='$username'";
+
+        $run_user = mysqli_query($con, $get_user);
+
+        $row = mysqli_fetch_array($run_user);
+        
+        $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['username'] = $row['username'];  
+
+        echo '
+        <script>
+            swal({
+                    title: "Login Successful!",
+                    icon: "success",
+                 });
+    </script>
+    ';
+    
+        echo "<script>window.open('otp-process.php', '_self')</script>";  
+
+        }
+
+}
+
+
+if(isset($_POST['register']))
+{
+
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+
+    $check_user = "select user_id from registered_users where email = '$email' ";
+
+    $run_check = mysqli_query ($con, $check_user);
+
+    if (mysqli_num_rows($run_check) == 0)
+    {
+    $sql = "insert into registered_users (username, email, phone_number, password)
+    value ('$username', '$email', '$phone', '$password')
+    ";
+    $query = mysqli_query($con, $sql) or  die(mysqli_error($con));
+
+    if($query)
+    {
+        echo '
+        <script>
+            swal({
+                    title: "Registration Successful!",
+                    icon: "success",
+                 });
+    </script>
+    ';
+
+    }
+}
+
+else{
+    echo '
+    <script>
+        swal({
+                title: "Email already registered!",
+                icon: "error",
+             });
+</script>
+';
+
+}
+}
+
+?>

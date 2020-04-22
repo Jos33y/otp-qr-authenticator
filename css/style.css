@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Noto+Sans+KR:wght@300&family=Nunito:wght@600&family=Ubuntu&display=swap');
+
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -193,6 +196,38 @@ form {
 	font-size: 28px;
 	font-weight: 700;
 	letter-spacing: 1px;
+}
+.text{
+	font-family: 'Noto Sans KR', sans-serif;
+}
+.user{
+	color: rgb(110,110,110);
+	font-size: 25px;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 1px;
+	margin-bottom: 3%;
+
+}
+.username{
+	color: #00FF5C;
+	text-transform: uppercase;
+}
+.otp-sent{
+	color: #6e6e72;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 20%;
+
+}
+.otp-resend{
+	color: #6e6e72;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 12%;
+
 }
 
 
