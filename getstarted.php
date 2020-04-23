@@ -112,6 +112,7 @@ else
         
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['username'] = $row['username'];  
+        $_SESSION['email'] = $row['email'];
 
         echo '
         <script>

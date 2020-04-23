@@ -18,7 +18,8 @@
 <div id="loader"></div>
 <div id="content">
 
-<h2> Dashboard Loading </h2>
+<h2 class="text-center" style="margin-top: 25%"> Dashboard Loading </h2>
+
 </div>
 </body>
 </html>

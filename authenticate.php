@@ -1,7 +1,7 @@
+
 <?php
 session_start();
 include('dbconn.php');
-
 
 if(!isset($_SESSION['user_id']))
 {
@@ -20,33 +20,6 @@ $run_user = mysqli_query($con, $get_user);
 $row = mysqli_fetch_array($run_user);
 
 $username = $row['username'];
-
-if(isset($_POST['verify']))
-{
-
-$rno=$_SESSION['otp'];
-
-$urno=$_POST['otpvalue'];
-
-if(!strcmp($rno,$urno))
-{
-$name=$_SESSION['name'];
-$email=$_SESSION['email'];
-$phone=$_SESSION['phone'];
-
-echo "<script>alert('Valid OTP')</script>";
-
-
-
-
-
-}
-else{
-    echo "<script>alert('Invalid OTP')</script>";
-
-}
-
-}
 
 ?>
 
@@ -106,6 +79,48 @@ else{
 		</div>
 	</div>
 	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/index-2.js"></script>
+    <script src="js/index-2.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
+
+<?php 
+
+if(isset($_POST['verify']))
+{
+
+$rno=$_SESSION['otp'];
+
+$urno=$_POST['otpvalue'];
+
+if(!strcmp($rno,$urno))
+{
+    $_SESSION['user_id']=$user_id;
+
+    echo '
+    <script>
+        swal({
+                title: "OTP is Valid!",
+                icon: "success",
+            });
+    </script>
+    ';
+
+        echo "<script>window.open('account.php', '_self')</script>";  
+
+}
+else{
+    echo '
+    <script>
+        swal({
+                title: "Invalid OTP!",
+                icon: "error",
+             });
+</script>
+';
+
+}
+
+}
+
+?>
