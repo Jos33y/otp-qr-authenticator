@@ -14,6 +14,7 @@
 html, body {
 	height: 100%;
 	background-color: #020126;
+	color: #6e6e72;
 }
 
 .align {
@@ -173,7 +174,7 @@ form {
 	background-size: cover;
 }
 
-.card button {
+.form-style button{
 	display: block;
 	background: #00FF5C;
 	padding: 14px 52px;
@@ -202,7 +203,7 @@ form {
 }
 .user{
 	color: rgb(110,110,110);
-	font-size: 25px;
+	font-size: 22px;
 	font-weight: 700;
 	text-align: center;
 	letter-spacing: 1px;
@@ -213,22 +214,31 @@ form {
 	color: #00FF5C;
 	text-transform: uppercase;
 }
-.otp-sent{
-	color: #6e6e72;
+.otp-select{
 	font-size: 18px;
 	font-weight: 600;
 	letter-spacing: 1px;
-	margin-bottom: 20%;
+	margin-bottom: 10%;
 
 }
-.otp-resend{
-	color: #6e6e72;
+.select-otp{
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.otp-sent{
 	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: 1px;
 	margin-bottom: 12%;
 
 }
+
+.select-otp .btn{
+	margin-bottom: 5%;
+}
+
 
 
 

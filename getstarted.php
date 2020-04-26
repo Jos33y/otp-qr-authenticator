@@ -22,7 +22,7 @@ include('dbconn.php');
 				<div></div>
 			</div>
 			<div class="tabs">
-                <form method="POST">
+                <form method="POST" class="form-style">
 					<div class="inputs">
 						<div class="input">
 							<input placeholder="Username" name="username" type="text">
@@ -39,7 +39,7 @@ include('dbconn.php');
 					</div>
 					<button type="submit" name="login">Login</button>
 				</form>
-				<form method="POST" action="getstarted.php#login" >
+				<form method="POST" action="getstarted.php#login" class="form-style" >
 					<div class="inputs">
 						<div class="input">
 							<input placeholder="Username" type="text" name="username">
@@ -111,8 +111,8 @@ else
         $row = mysqli_fetch_array($run_user);
         
         $_SESSION['user_id'] = $row['user_id'];
-        $_SESSION['username'] = $row['username'];  
-        $_SESSION['email'] = $row['email'];
+        $_SESSION['username'] = $row['username']; 
+      
 
         echo '
         <script>
@@ -123,7 +123,7 @@ else
     </script>
     ';
     
-        echo "<script>window.open('otp-process.php', '_self')</script>";  
+        echo "<script>window.open('auth-selection.php#otpcode', '_self')</script>";  
 
         }
 

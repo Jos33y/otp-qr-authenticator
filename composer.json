@@ -1,0 +1,15 @@
+{
+    "name": "pc/otp-qr-authenticator",
+    "description": "OTP and QR authenticator",
+    "type": "project",
+    "require": {
+        "twilio/sdk": "^6.3"
+    },
+    "license": "common",
+    "authors": [
+        {
+            "name": "Jos33y",
+            "email": "josephlagbalu@gmail.com"
+        }
+    ]
+}

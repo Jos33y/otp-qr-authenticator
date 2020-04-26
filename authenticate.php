@@ -13,6 +13,8 @@ if(!isset($_SESSION['user_id']))
 
 $user_id = $_SESSION['user_id'];
 
+$box = $_SESSION['box'];
+
 $get_user = "select * from registered_users where user_id ='$user_id'";
 
 $run_user = mysqli_query($con, $get_user);
@@ -37,14 +39,14 @@ $username = $row['username'];
 			<div class="head">
 				<div></div>
 				<a id="otpcode" class="selected" href="#otpcode">OTP Auth</a>
-				<a id="qrcode" href="#qrcode">QR Code Auth</a>
+				
 				<div></div>
 			</div>
 			<div class="tabs">
-				<form method="POST">
+				<form method="POST" class="form-style">
 					<div class="text">
                         <h2 class="user">Welcome <span class="username"><?php echo $username; ?> </span> </h2>
-                        <h4 class="otp-sent"> OTP has been sent to your mail </h4>
+                        <h4 class="otp-sent"> Enter OTP code sent to your <?php echo $box; ?> </h4>
                         
 						<div class="input">
 							<input placeholder="Enter OTP Code" type="text" name="otpvalue">
@@ -54,27 +56,7 @@ $username = $row['username'];
                     </div>
 					<button type="submit" name="verify">Verify</button>
 				</form>
-				<form>
-					<div class="inputs">
-						<div class="input">
-							<input placeholder="Username" type="text" name="username">
-							<img src="images/user.svg">
-						</div>
-						<div class="input">
-							<input placeholder="Email" type="text" name="email">
-							<img src="images/mail.svg">
-						</div>
-						<div class="input">
-							<input placeholder="Phone Number" type="text" name="phone">
-							<img src="images/call.svg">
-						</div>
-						<div class="input">
-							<input placeholder="Password" type="password" name="password">
-							<img src="images/pass.svg">
-						</div>
-					</div>
-					<button>Register</button>
-				</form>
+				
 			</div>
 		</div>
 	</div>

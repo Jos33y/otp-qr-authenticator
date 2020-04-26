@@ -17,6 +17,7 @@ if(mail($to,$subject,$txt,$headers))
 
 $_SESSION['user_id']=$user_id;
 $_SESSION['otp']=$rndno;
+$_SESSION['box'] = 'email';
 
 echo "<script>window.open('authenticate.php#otpcode', '_self')</script>"; 
 
