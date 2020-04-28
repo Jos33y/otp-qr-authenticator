@@ -18,8 +18,8 @@ $txt = "OTP: ".$rndno."";
 
 $number  = '+234'.$phone;
 
-$sid = 'AC323dc9752db16ed652c61c98219d7bc2';
-$token = '580417e667b2b1d9675fa27660773376';
+$sid = 'AUTH ID';
+$token = 'AUTH TOKEN';
 $client = new Client($sid, $token);
 
  //Use the client to do fun stuff like send text messages!
